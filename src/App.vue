@@ -1,7 +1,37 @@
+
 <template>
-  <Button>
-    Envoyer
-  </Button>
+  <input type="text" v-model="name.title">
+</template>
+<script setup>
+import { ref, watch } from 'vue';
+
+const name = ref({
+  title: ''
+})
+
+watch(()=> name.value.title, (newValue, oldValue) => {
+  document.title = newValue
+})
+</script>
+
+<!-- CHAPITRE II -->
+<!-- <template>
+  <Layout>
+    <template #header>
+      <h1>Liste des taches a faire</h1>
+    </template>
+    <template v-slot:aside>
+      A cote
+    </template>
+    <template v-slot:main>
+      <button @click="showTimer = !showTimer">Aficher / Masquer</button>
+
+      <Timer v-if="showTimer"></Timer>
+    </template>
+    <template #footer>
+      Pied de page
+    </template>
+  </Layout>
   <form action="" @submit.prevent="addTodo">
     <fieldset role="group">
       <input 
@@ -25,37 +55,49 @@
           <input type="checkbox" v-model="todo.completed" id="">
           {{ todo.title }}
         </label>-->
-        <Checkbox :label="todo.title" v-model="todo.completed"/>
+        <!-- <Checkbox :label="todo.title" v-model="todo.completed"/>
       </li>
-    </ul>
+    </ul> 
     <label>
-      <!--<input type="checkbox" v-model="hideCompleted">-->
+      <!--<input type="checkbox" v-model="hideCompleted">
       <Checkbox label="Masquer les taches terminees" v-model="hideCompleted"/>
     </label>
     <p v-if="remainingTodos > 0"> <span style="color: orangered; font-weight: bold">{{ remainingTodos }}</span> tache{{ remainingTodos > 1 ? 's' : '' }} a faire</p>
-    <Checkbox label="Cocher"/>
+    <Button>
+      Envoyer
+    </Button>
   </div>
-</template>
+</template>-->
 
-<script setup>
-import { computed, ref } from 'vue';
+<!--<script setup>
+import { computed, onMounted, ref } from 'vue';
 import Checkbox from './Checkbox.vue';
 import Button from './Button.vue';
+import Layout from './Layout.vue';
+import Timer from './Timer.vue';
 
+const showTimer = ref(true);
 const newTodo = ref('')
 const hideCompleted = ref(false)
-const todos = ref([
-  {
-    title: 'Tache de test',
-    completed: true,
-    date: 1
-  },
-  {
-    title: 'Tache a faire',
-    completed: false,
-    date: 2
-  }
-]);
+const todos = ref([]);
+
+onMounted(() => {
+  fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(r => r.json())
+  .then(v => todos.value = v .map(todo => ({ ...todo, date: todo.id})))
+})
+// const todos = ref([
+//   {
+//     title: 'Tache de test',
+//     completed: true,
+//     date: 1
+//   },
+//   {
+//     title: 'Tache a faire',
+//     completed: false,
+//     date: 2
+//   }
+// ]);
 const addTodo = () =>{
   todos.value.push({
     title: newTodo.value,
