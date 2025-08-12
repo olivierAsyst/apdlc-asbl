@@ -1,0 +1,58 @@
+{
+    "title": "Questionnaire sur les Films et Séries",
+    "minimun_score": 4,
+    "success_message": "Félicitations ! Vous avez réussi le quiz.",
+    "failure_message": "Désolé, vous n'avez pas réussi le quiz.",
+    "questions": [
+        {
+            "question": "Quel est le nom du personnage principal dans 'Breaking Bad' ?",
+            "choices": [
+                "Walter White",
+                "Jesse Pinkman",
+                "Saul Goodman",
+                "Gus Fring"
+            ],
+            "correct_answer": "Walter White"
+        },
+        {
+            "question": "Dans quel film trouve-t-on la phrase 'Je suis ton père' ?",
+            "choices": [
+                "Le Parrain",
+                "Titanic",
+                "Star Wars: L'Empire contre-attaque",
+                "Jurassic Park"
+            ],
+            "correct_answer": "Star Wars: L'Empire contre-attaque"
+        },
+        {
+            "question": "Quel acteur joue le rôle de Jack Dawson dans 'Titanic' ?",
+            "choices": [
+                "Brad Pitt",
+                "Johnny Depp",
+                "Tom Cruise",
+                "Leonardo DiCaprio"
+            ],
+            "correct_answer": "Leonardo DiCaprio"
+        },
+        {
+            "question": "'Game of Thrones' est basé sur une série de livres écrite par quel auteur ?",
+            "choices": [
+                "J.K. Rowling",
+                "George R.R. Martin",
+                "J.R.R. Tolkien",
+                "Isaac Asimov"
+            ],
+            "correct_answer": "George R.R. Martin"
+        },
+        {
+            "question": "'Friends' se déroule principalement dans quelle ville ?",
+            "choices": [
+                "New York",
+                "Los Angeles",
+                "Chicago",
+                "Miami"
+            ],
+            "correct_answer": "New York"
+        }
+    ]
+}
