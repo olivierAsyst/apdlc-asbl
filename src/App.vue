@@ -1,5 +1,10 @@
-
 <template>
+
+</template>
+
+<script setup>
+</script>
+<!-- <template>
   <input type="text" v-model="name.title">
 </template>
 <script setup>
@@ -12,7 +17,7 @@ const name = ref({
 watch(()=> name.value.title, (newValue, oldValue) => {
   document.title = newValue
 })
-</script>
+</script> -->
 
 <!-- CHAPITRE II -->
 <!-- <template>
